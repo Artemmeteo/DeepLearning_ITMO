@@ -1,0 +1,51 @@
+# Local Python environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python and tooling caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter autosave checkpoints
+.ipynb_checkpoints/
+
+# Local IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Downloaded datasets (the notebook downloads them automatically)
+data/
+runs/
+
+# Local reference notebook
+hw2_students/hw2_nlp_base.ipynb
+
+# Local secrets (keep example configuration files)
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# macOS metadata
+.DS_Store
+.AppleDouble
+._*
+
+# Keep homework notebooks, dependency files and required submission artifacts.
