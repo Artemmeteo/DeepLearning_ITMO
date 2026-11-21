@@ -27,6 +27,9 @@ htmlcov/
 data/
 runs/
 
+# Local reference notebook
+hw2_students/hw2_nlp_base.ipynb
+
 # Local secrets (keep example configuration files)
 .env
 .env.*

@@ -1,0 +1,281 @@
+{
+  "track": "nlp",
+  "model": "google-bert/bert-base-cased",
+  "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+  "dataset": "mooselab/SDLog/main",
+  "classes": [
+    "CONFIG",
+    "ID",
+    "MAC",
+    "NET",
+    "PATH",
+    "URL",
+    "USER"
+  ],
+  "n_train": 12256,
+  "n_val": 1752,
+  "n_test": 1471,
+  "params_total": 107731215,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.20663142719846228,
+      "f1_macro": 0.1950265455291424,
+      "precision": 0.9071729957805907,
+      "recall": 0.11659436008676789
+    },
+    "random_head": {
+      "f1_micro": 0.2133924611973392,
+      "f1_macro": 0.10605644189545425,
+      "precision": 0.1275580532287138,
+      "recall": 0.6523861171366594
+    }
+  },
+  "final": {
+    "f1_micro": 0.8773551368645575,
+    "f1_macro": 0.8399095775190683,
+    "precision": 0.8145214521452145,
+    "recall": 0.9506933744221879,
+    "token_f1": 0.8773551368645575,
+    "per_type": {
+      "CONFIG": {
+        "precision": 0.9891304347826086,
+        "recall": 0.8666666666666667,
+        "f1-score": 0.9238578680203046,
+        "support": 105
+      },
+      "ID": {
+        "precision": 0.9652605459057072,
+        "recall": 0.9373493975903614,
+        "f1-score": 0.9511002444987775,
+        "support": 415
+      },
+      "MAC": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3
+      },
+      "NET": {
+        "precision": 0.7035236938031592,
+        "recall": 0.9914383561643836,
+        "f1-score": 0.8230277185501066,
+        "support": 584
+      },
+      "PATH": {
+        "precision": 0.7066666666666667,
+        "recall": 0.9814814814814815,
+        "f1-score": 0.821705426356589,
+        "support": 54
+      },
+      "URL": {
+        "precision": 1.0,
+        "recall": 0.23529411764705882,
+        "f1-score": 0.38095238095238093,
+        "support": 17
+      },
+      "USER": {
+        "precision": 1.0,
+        "recall": 0.9583333333333334,
+        "f1-score": 0.9787234042553191,
+        "support": 120
+      }
+    }
+  },
+  "ablation": {
+    "setting": [
+      "freeze",
+      "all_subwords"
+    ],
+    "split": "validation",
+    "config": {
+      "epochs": 3,
+      "learning_rate": 3e-05,
+      "batch_size": 32,
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01,
+      "max_length": 128,
+      "seed": 0
+    },
+    "full": {
+      "freeze_encoder": false,
+      "label_all_subwords": false,
+      "metrics": {
+        "f1_micro": 0.9748965517241379,
+        "f1_macro": 0.9148574000100088,
+        "precision": 0.9921392476137002,
+        "recall": 0.9582429501084598,
+        "token_f1": 0.9748965517241379,
+        "per_type": {
+          "CONFIG": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 3
+          },
+          "ID": {
+            "precision": 0.990228013029316,
+            "recall": 0.9411764705882353,
+            "f1-score": 0.965079365079365,
+            "support": 969
+          },
+          "MAC": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5
+          },
+          "NET": {
+            "precision": 0.998587570621469,
+            "recall": 0.9943741209563994,
+            "f1-score": 0.9964763918252291,
+            "support": 711
+          },
+          "PATH": {
+            "precision": 0.9924242424242424,
+            "recall": 0.8972602739726028,
+            "f1-score": 0.9424460431654675,
+            "support": 146
+          },
+          "URL": {
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "f1-score": 0.8333333333333333,
+            "support": 5
+          },
+          "USER": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5
+          }
+        }
+      },
+      "train_time_sec": 250.67573883699993,
+      "trainable_params": 107731215
+    },
+    "freeze": {
+      "freeze_encoder": true,
+      "label_all_subwords": false,
+      "metrics": {
+        "f1_micro": 0.0,
+        "f1_macro": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "token_f1": 0.0,
+        "per_type": {
+          "CONFIG": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3
+          },
+          "ID": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 969
+          },
+          "MAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+          },
+          "NET": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 711
+          },
+          "PATH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 146
+          },
+          "URL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+          },
+          "USER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+          }
+        }
+      },
+      "train_time_sec": 91.40083287700008,
+      "trainable_params": 11535
+    },
+    "all_subwords": {
+      "freeze_encoder": false,
+      "label_all_subwords": true,
+      "metrics": {
+        "f1_micro": 0.8301564722617354,
+        "f1_macro": 0.47380694606547946,
+        "precision": 0.8731298623578695,
+        "recall": 0.7912147505422994,
+        "token_f1": 0.8855291576673866,
+        "per_type": {
+          "CONFIG": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3333333333333333,
+            "support": 3
+          },
+          "ID": {
+            "precision": 0.9094292803970223,
+            "recall": 0.7564499484004128,
+            "f1-score": 0.8259154929577465,
+            "support": 969
+          },
+          "MAC": {
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "f1-score": 0.8333333333333333,
+            "support": 5
+          },
+          "NET": {
+            "precision": 0.997179125528914,
+            "recall": 0.9943741209563994,
+            "f1-score": 0.995774647887324,
+            "support": 711
+          },
+          "PATH": {
+            "precision": 0.08148148148148149,
+            "recall": 0.07534246575342465,
+            "f1-score": 0.07829181494661921,
+            "support": 146
+          },
+          "URL": {
+            "precision": 0.18181818181818182,
+            "recall": 0.4,
+            "f1-score": 0.25000000000000006,
+            "support": 5
+          },
+          "USER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5
+          }
+        }
+      },
+      "train_time_sec": 232.35425794900016,
+      "trainable_params": 107731215
+    }
+  },
+  "errors": {
+    "correct": 1767,
+    "boundary": 0,
+    "type": 1,
+    "missed": 76,
+    "spurious": 13
+  },
+  "device": "Tesla T4",
+  "train_time_sec": 250.67573883699993,
+  "fast_mode": false
+}
